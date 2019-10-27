@@ -8,11 +8,29 @@ import (
 
 // 文件操作
 func main() {
-	readFile()
+	createFile()
+	//ReadFile()
+}
+
+type User struct {
+	Name string `json:"name"`
+}
+
+func createFile() {
+	file, err := os.Create("test.txt")
+	if err != nil {
+		fmt.Println("创建文件失败")
+	}
+	defer file.Close()
+	fmt.Println("创建完成")
 }
 
 // 读取文件
-func readFile() {
+func ReadFile() {
+	getgid := os.Getgid()
+	fmt.Println(getgid)
+	dir, _ := os.Getwd()
+	fmt.Printf("%v", dir)
 	// 获取当前目录
 	pwd, _ := os.Getwd()
 	fmt.Println(pwd)
