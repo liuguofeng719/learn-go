@@ -63,6 +63,7 @@ func main() {
 
 	m, _ := month.MarshalJSON()
 	fmt.Println(string(m))
+
 }
 
 type Month struct {
