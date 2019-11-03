@@ -7,15 +7,20 @@ import (
 )
 
 func main() {
+	testFunc()
 	go running()
 	// 让程序等待
 	var inputString string
 	fmt.Scanln(&inputString)
 }
 
-func test() {
+func TestRouting(a int) {
+	fmt.Println(a)
+}
+
+func testFunc() {
 	for index := 0; index < 100; index++ {
-		go go_route(index)
+		go TestRouting(index)
 	}
 	time.Sleep(time.Second)
 }
